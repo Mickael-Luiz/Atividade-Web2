@@ -5,6 +5,7 @@ import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import { Calendar } from 'primereact/calendar';
 import { Button } from 'primereact/button';
+import './TasksTable.css'
 
 function TasksTable() {
     const [atividades, setAtividades] = useState([])
@@ -13,7 +14,7 @@ function TasksTable() {
     const [date, setDate] = useState({})
 
     return (
-        <div className='App'>
+        <div className='containerTasks'>
             <br />
             <form className='formNewAtv' onSubmit={adicionarAtv}>
                 <InputText value={name} onChange={(e) => setNome(e.target.value)} placeholder='Nome' required />
@@ -23,7 +24,7 @@ function TasksTable() {
 
             <br />
 
-            <DataTable value={atividades} tableStyle={{ minWidth: '40rem' }} paginator rows={10} rowsPerPageOptions={[5, 10, 25]}>
+            <DataTable value={atividades} tableStyle={{ minWidth: '40rem', overflowX: 'auto' }} paginator rows={10} rowsPerPageOptions={[5, 10, 25]}>
                 <Column field="nome" header="Nome"></Column>
                 <Column field="data" header="Data"></Column>
                 <Column body={(atv) => btnDelete(atv.nome)} header="Delete"></Column>

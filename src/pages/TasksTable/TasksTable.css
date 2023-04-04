@@ -1,0 +1,13 @@
+.containerTasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.formNewAtv {
+    display: flex;
+    justify-content: space-between;
+    min-width: 40rem;
+    overflow-x: auto;
+  }
