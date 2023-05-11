@@ -12,7 +12,23 @@ import { Navigate } from 'react-router-dom';
 
 function Login() {
 
-    const { setIsLogged } = useContext(Context)
+    const email = 'teste@teste.com'
+    const password = 123456
+
+    const { auth, setIsLogged, setUser } = useContext(Context)
+
+    function login() {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                setIsLogged(true)
+                const user = userCredential.user;
+            })
+            .catch((error) => {
+                console.log(error.code)
+                console.log(error.message)
+            });
+    }
+
 
     return (
         <div className="fundoLogin">
@@ -34,7 +50,7 @@ function Login() {
                         <label htmlFor="rememberme" className="ml-2">Remember-me.</label>
                     </div>
                     <div>
-                        <Button label="Logar" style={{width: '207px'}} onClick={logar}/>
+                        <Button label="Logar" style={{ width: '207px' }} onClick={logar} />
                     </div>
                 </main>
                 <footer className="footerLogin">
@@ -46,7 +62,8 @@ function Login() {
 
     function logar() {
         setIsLogged(true);
-        <Navigate to='/home' />
+        <Navigate to='/' />
+        // console.log(auth);
     }
 
 }

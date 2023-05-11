@@ -10,4 +10,11 @@
     justify-content: space-between;
     min-width: 40rem;
     overflow-x: auto;
-  }
+}
+
+.btnBack {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    width: 40rem;
+}

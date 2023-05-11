@@ -10,7 +10,7 @@ function PrivateRouters({ isLogged }) {
 }
 
 function NotPrivateRouters({ isLogged }) {
-    return isLogged ? <Navigate to='/home' /> : <Outlet />
+    return isLogged ? <Navigate to='/' /> : <Outlet />
 }
 
 function Routers() {
@@ -20,7 +20,7 @@ function Routers() {
     return (
         <Routes>
             <Route element={<PrivateRouters isLogged={isLogged} />}>
-                <Route path="/home" element={<Home />} />
+                <Route exact path="/" element={<Home />} />
                 <Route path="/taskstable" element={<TasksTable />} />
             </Route>
             <Route element={<NotPrivateRouters isLogged={isLogged} />}>

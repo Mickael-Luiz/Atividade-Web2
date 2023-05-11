@@ -6,10 +6,13 @@ export const Context = createContext()
 
 export default function ContextProvider({children}) {
 
+    const auth = getAuth(Firebase)
+    const [user, setUser] = useState()
+
     const [isLogged, setIsLogged] = useState(false)
 
     return (
-        <Context.Provider value={{auth, isLogged, setIsLogged}}>
+        <Context.Provider value={{auth, isLogged, setIsLogged, user, setUser}}>
             {children}
         </Context.Provider>
     )

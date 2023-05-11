@@ -29,6 +29,10 @@ function TasksTable() {
                 <Column field="data" header="Data"></Column>
                 <Column body={(atv) => btnDelete(atv.nome)} header="Delete"></Column>
             </DataTable>
+            <br />
+            <span className='btnBack'>
+                <Button label="Voltar" icon="pi pi-arrow-left" iconPos='left' onClick={backHome()} />
+            </span>
         </div>
     )
 
