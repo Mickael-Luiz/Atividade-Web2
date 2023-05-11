@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import './Home.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className='containerHome'>
       <h1>Página Inicial</h1>
       <ul>
         <li>
